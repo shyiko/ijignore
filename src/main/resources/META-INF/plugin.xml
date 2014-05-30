@@ -1,0 +1,30 @@
+<!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
+<idea-plugin version="2">
+    <name>ijignore</name>
+    <description><![CDATA[
+      .ijignore-controlled selective indexing for IntelliJ® Platform-based products (IDEA, WebStorm, ...)
+  ]]></description>
+    <version>0.1.0-SNAPSHOT</version>
+    <vendor email="stanley.shyiko@gmail.com" url="https://github.com/shyiko/ijignore">Stanley Shyiko</vendor>
+    <!-- http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges -->
+    <idea-version since-build="135"/>
+    <change-notes><![CDATA[
+        0.1.0-SNAPSHOT
+        <ul>
+            <li>pre-release, just a POC</li>
+        </ul>
+  ]]></change-notes>
+
+    <application-components>
+    </application-components>
+
+    <project-components>
+    </project-components>
+
+    <actions>
+    </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <fileContentIndexingVoter implementation="com.github.shyiko.ijignore.IjignoreFileContentIndexingVoter"/>
+    </extensions>
+</idea-plugin>

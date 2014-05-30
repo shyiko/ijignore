@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.shyiko</groupId>
+    <artifactId>ijignore</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+
+    <name>ijignore</name>
+    <description>.ijignore-controlled selective indexing for IntelliJ® Platform-based products (IDEA, WebStorm, ...)</description>
+
+    <url>https://github.com/shyiko/ijignore</url>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>stanley.shyiko</id>
+            <email>stanley.shyiko@gmail.com</email>
+            <name>Stanley Shyiko</name>
+        </developer>
+    </developers>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <idea.ce.home>${env.IDEA_CE_HOME}</idea.ce.home>
+    </properties>
+
+    <scm>
+        <connection>scm:git:git@github.com:shyiko/ijignore.git</connection>
+        <developerConnection>scm:git:git@github.com:shyiko/ijignore.git</developerConnection>
+        <url>git@github.com:shyiko/ijignore.git</url>
+    </scm>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.eclipse.jgit</groupId>
+            <artifactId>org.eclipse.jgit</artifactId>
+            <version>2.1.0.201209190230-r</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.0</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <compilerArguments>
+                        <extdirs>${idea.ce.home}/lib</extdirs>
+                    </compilerArguments>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <descriptors>
+                        <descriptor>src/main/assembly/plugin.xml</descriptor>
+                    </descriptors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>package-zip</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
