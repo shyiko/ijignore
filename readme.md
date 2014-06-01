@@ -11,7 +11,7 @@ from the project's source tree.
 
 ## Usage
 
-> At the time of writing ijignore works on [shyiko/intellij-community](https://github.com/shyiko/intellij-community) only.
+> At the time of writing ijignore works on [shyiko/intellij-community](https://github.com/shyiko/intellij-community) only. Check [JetBrains/intellij-community#189](https://github.com/JetBrains/intellij-community/pull/189) for PR status.
 
 1. Install [ijignore plugin](https://github.com/shyiko/ijignore/releases).
 2. Create `.ijignore` file (ij here stands for IntelliJ®; full name isn't used so that to respect [Trademark Usage Guidelines](http://www.jetbrains.org/display/IJOS/Trademark+Usage+Guidelines)) in the project's root directory.
